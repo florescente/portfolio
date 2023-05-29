@@ -19,8 +19,7 @@
 }
 body {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   min-height: 100vh;
   background-color: var(--rose_pompadour);
   color: var(--white);
