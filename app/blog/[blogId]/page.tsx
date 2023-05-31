@@ -1,9 +1,16 @@
 import React from 'react'
 
-function article(): React.JSX.Element {
+interface Posts {
+  params: {
+    blogId: string
+  }
+}
+
+function article({ params }: Posts): React.JSX.Element {
+  const { blogId } = params
   return (
     <main className="flex justify-center items-center grow">
-      <div className="text-3xl font-bold">article</div>
+      <div className="text-3xl font-bold">{blogId}</div>
     </main>
   )
 }

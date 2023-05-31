@@ -1,9 +1,16 @@
 import React from 'react'
 
-function project(): React.JSX.Element {
+interface Posts {
+  params: {
+    projectId: string
+  }
+}
+
+function project({ params }: Posts): React.JSX.Element {
+  const { projectId } = params
   return (
     <main className="flex justify-center items-center grow">
-      <div className="text-3xl font-bold">project</div>
+      <div className="text-3xl font-bold">{projectId}</div>
     </main>
   )
 }

@@ -2,14 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --finn: #643a71;
-  --amethyst: #8b5fbf;
-  --french_mauve: #d183c9;
-  --rose_pompadour: #e3879e;
-  --pink: #fec0ce;
-  --white: rgba(255, 255, 255, 0.8);
-  --night: #0d160b;
+@layer base {
+  body {
+    @apply bg-rose_pompadour text-white;
+  }
 }
 
 * {
@@ -21,6 +17,4 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--rose_pompadour);
-  color: var(--white);
 }
