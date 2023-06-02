@@ -3,13 +3,22 @@
 import React from 'react'
 import Link from 'next/link'
 
-function header(): React.JSX.Element {
+function Header(): React.JSX.Element {
+  const [istoggled, toggle] = React.useState(false)
   return (
-    <nav className="bg-amethyst border border-white flex justify-center">
+    <nav
+      className="bg-amethyst border border-white flex justify-center"
+      onMouseLeave={() => {
+        toggle(false)
+      }}
+    >
       <div className="flex flex-wrap items-center justify-between w-full max-w-screen-xl p-4">
         <button
           type="button"
-          className="flex md:hidden p-2 rounded-lg hover:bg-finn"
+          className="flex md:hidden p-2 rounded-lg hover:bg-finn mr-12"
+          onClick={() => {
+            toggle(!istoggled)
+          }}
         >
           <svg
             className="h-8 w-8 text-red-500"
@@ -26,8 +35,14 @@ function header(): React.JSX.Element {
           </svg>
         </button>
         <div>Sarah Nakada</div>
-        <div className="hidden md:block md:w-auto">
-          <ul className="flex flex-row justify-center gap-x-6 items-center p-3">
+        <div
+          className={
+            istoggled
+              ? 'block w-full border-t-2 mt-4 order-last md:block md:w-auto md:border-none md:mt-0'
+              : 'hidden md:block md:w-auto'
+          }
+        >
+          <ul className="flex flex-col md:flex-row justify-center gap-x-6 items-center p-3">
             <li>
               <Link href="/" className="p-3">
                 Home
@@ -63,4 +78,4 @@ function header(): React.JSX.Element {
   )
 }
 
-export default header
+export default Header
