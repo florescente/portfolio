@@ -16,7 +16,7 @@ function Header(): React.JSX.Element {
       <div className="flex flex-wrap items-center justify-between w-full max-w-screen-xl p-4">
         <button
           type="button"
-          className="flex md:hidden p-2 rounded-lg hover:bg-finn mr-12"
+          className="flex md:hidden p-2 rounded-lg hover:bg-finn mr-12 anibutton"
           onClick={() => {
             toggle(!istoggled)
           }}
@@ -35,7 +35,7 @@ function Header(): React.JSX.Element {
             />
           </svg>
         </button>
-        <div>Sarah Nakada</div>
+        <div className="animenu">Sarah Nakada</div>
         <div
           className={
             istoggled
@@ -49,34 +49,34 @@ function Header(): React.JSX.Element {
               toggle(false)
             }}
           >
-            <li>
+            <li className="animenu">
               <Link href="/" className="p-3">
                 Home
               </Link>
             </li>
-            <li>
+            <li className="animenu">
               <Link href="/about" className="p-3">
                 About
               </Link>
             </li>
-            <li>
+            <li className="animenu">
               <Link href="/projects" className="p-3">
                 Projects
               </Link>
             </li>
-            <li>
+            <li className="animenu">
               <Link href="/blog" className="p-3">
                 Articles
               </Link>
             </li>
-            <li>
+            <li className="animenu">
               <Link href="/contact" className="p-3">
                 Contact
               </Link>
             </li>
           </ul>
         </div>
-        <button className="border rounded-full p-2 px-5 hover:bg-finn">
+        <button className="border rounded-full p-2 px-5 anibutton">
           resume
         </button>
       </div>
