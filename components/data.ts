@@ -1,22 +1,22 @@
 const links = [
   {
-    href: '/',
+    href: '',
     name: 'Home',
   },
   {
-    href: '/about',
+    href: 'about',
     name: 'About',
   },
   {
-    href: '/projects',
+    href: 'projects',
     name: 'Projects',
   },
   {
-    href: '/blog',
+    href: 'blog',
     name: 'Articles',
   },
   {
-    href: '/contact',
+    href: 'contact',
     name: 'Contact',
   },
 ]

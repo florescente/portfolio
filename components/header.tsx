@@ -55,7 +55,8 @@ function Header(): React.JSX.Element {
             }}
           >
             {links?.map((link) => {
-              const isActive = pathname.startsWith(link.href)
+              const isActive = pathname.split('/')[1] === link.href
+
               return (
                 <li className="animenu" key={link.name}>
                   <Link
