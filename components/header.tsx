@@ -2,9 +2,12 @@
 
 import React from 'react'
 import Link from 'next/link'
+import links from './data'
+import { usePathname } from 'next/navigation'
 
 function Header(): React.JSX.Element {
   const [istoggled, toggle] = React.useState(false)
+  const pathname = usePathname()
 
   return (
     <nav
@@ -51,31 +54,19 @@ function Header(): React.JSX.Element {
               toggle(false)
             }}
           >
-            <li className="animenu">
-              <Link href="/" className="p-3">
-                Home
-              </Link>
-            </li>
-            <li className="animenu">
-              <Link href="/about" className="p-3">
-                About
-              </Link>
-            </li>
-            <li className="animenu">
-              <Link href="/projects" className="p-3">
-                Projects
-              </Link>
-            </li>
-            <li className="animenu">
-              <Link href="/blog" className="p-3">
-                Articles
-              </Link>
-            </li>
-            <li className="animenu">
-              <Link href="/contact" className="p-3">
-                Contact
-              </Link>
-            </li>
+            {links?.map((link) => {
+              const isActive = pathname.startsWith(link.href)
+              return (
+                <li className="animenu" key={link.name}>
+                  <Link
+                    href={link.href}
+                    className={isActive ? 'p-3 font-semibold' : 'p-3'}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </div>
         <button className="border rounded-full p-2 px-5 anibutton">
