@@ -35,7 +35,9 @@ function Header(): React.JSX.Element {
             />
           </svg>
         </button>
-        <div className="animenu">Sarah Nakada</div>
+        <Link href="/" className="animenu">
+          Sarah Nakada
+        </Link>
         <div
           className={
             istoggled
