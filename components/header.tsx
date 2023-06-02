@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 function Header(): React.JSX.Element {
   const [istoggled, toggle] = React.useState(false)
+
   return (
     <nav
       className="bg-amethyst border border-white flex justify-center"
@@ -42,7 +43,12 @@ function Header(): React.JSX.Element {
               : 'hidden md:block md:w-auto'
           }
         >
-          <ul className="flex flex-col md:flex-row justify-center gap-x-6 items-center p-3">
+          <ul
+            className="flex gap-y-4 mt-3 md:mt-0 flex-col md:flex-row justify-center gap-x-6 items-center p-3"
+            onClick={() => {
+              toggle(false)
+            }}
+          >
             <li>
               <Link href="/" className="p-3">
                 Home
