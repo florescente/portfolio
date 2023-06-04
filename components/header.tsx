@@ -12,9 +12,9 @@ function Header(): React.JSX.Element {
   return (
     <nav
       className="bg-amethyst border border-white flex justify-center"
-      onMouseLeave={() => {
-        toggle(false)
-      }}
+      // onMouseLeave={() => {
+      //   toggle(false)
+      // }}
     >
       <div className="flex flex-wrap items-center justify-between w-full max-w-screen-xl p-4">
         <button
@@ -41,35 +41,31 @@ function Header(): React.JSX.Element {
         <Link href="/" className="animenu">
           Sarah Nakada
         </Link>
-        <div
-          className={
+        <ul
+          className={`${
             istoggled
-              ? 'block w-full border-t-2 mt-4 order-last md:block md:w-auto md:border-none md:mt-0'
-              : 'hidden md:block md:w-auto'
-          }
+              ? 'top-[80px] opacity-100 translate-y-0 mx-auto border md:border-none'
+              : '-translate-y-full md:translate-y-0 opacity-0 md:opacity-100 md:border-none'
+          } absolute left-0 top-[-400px] bg-amethyst order-last w-full z-[0] gap-y-4 gap-x-6 p-3 md:flex md:justify-center md:items-center md:static md:z-auto md:mt-0 md:flex-row md:order-[0] md:w-max transition-all ease-in duration-300`}
+          onClick={() => {
+            toggle(false)
+          }}
         >
-          <ul
-            className="flex gap-y-4 mt-3 md:mt-0 flex-col md:flex-row justify-center gap-x-6 items-center p-3"
-            onClick={() => {
-              toggle(false)
-            }}
-          >
-            {links?.map((link) => {
-              const isActive = pathname.split('/')[1] === link.href
+          {links?.map((link) => {
+            const isActive = pathname.split('/')[1] === link.href
 
-              return (
-                <li className="animenu" key={link.name}>
-                  <Link
-                    href={link.href}
-                    className={isActive ? 'p-3 font-semibold' : 'p-3'}
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
+            return (
+              <li className="animenu my-6 md:my-0 text-center" key={link.name}>
+                <Link
+                  href={link.href}
+                  className={`${isActive ? 'font-semibold' : ''} p-3`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
         <button className="border rounded-full p-2 px-5 anibutton">
           resume
         </button>
