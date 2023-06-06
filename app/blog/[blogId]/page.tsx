@@ -15,7 +15,9 @@ async function article({ params }: Posts): Promise<React.JSX.Element> {
   )
   return (
     <main className="flex justify-center items-center grow flex-col">
-      <Article />
+      <div className="flex flex-col">
+        <Article />
+      </div>
     </main>
   )
 }
