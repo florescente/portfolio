@@ -2,8 +2,6 @@ import React from 'react'
 import path from 'path'
 import { sync } from 'glob'
 
-export const dynamicParams = false
-
 interface Posts {
   params: {
     blogId: string
