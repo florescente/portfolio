@@ -44,9 +44,9 @@ function Header(): React.JSX.Element {
         <ul
           className={`${
             istoggled
-              ? 'top-[80px] opacity-100 translate-y-0 mx-auto border border-t-0 md:border-none'
-              : '-translate-y-full md:translate-y-0 opacity-0 md:opacity-100 md:border-none'
-          } absolute left-0 top-[-400px] bg-amethyst z-[-1] order-last w-full gap-y-4 gap-x-6 p-3 md:flex md:justify-center md:items-center md:static md:z-auto md:mt-0 md:flex-row md:order-[0] md:w-max transition-all ease-in duration-300`}
+              ? 'h-[288px] p-0 mx-auto border border-t-0 md:border-none md:p-3'
+              : 'h-0 p-0 md:border-none md:p-3'
+          } absolute left-0 bg-amethyst z-[-1] top-[80px] overflow-hidden order-last w-full gap-y-4 gap-x-6 p-3 md:flex md:justify-center md:items-center md:static md:z-auto md:h-auto md:mt-0 md:flex-row md:order-[0] md:w-max transition-all ease-in duration-300`}
           onClick={() => {
             toggle(false)
           }}
