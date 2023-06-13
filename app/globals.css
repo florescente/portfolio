@@ -26,3 +26,23 @@ body {
 .anibutton {
   @apply transition ease-in-out hover:bg-finn duration-300;
 }
+
+.burguer span {
+  @apply block absolute h-[3px] w-[28px] bg-[#FFF] rounded-full opacity-100 rotate-0 transition-all ease-in-out duration-200 left-0 right-0 mx-auto;
+}
+
+.burguer.open span:nth-child(1) {
+  @apply top-[14px] w-0;
+}
+
+.burguer.open span:nth-child(2) {
+  @apply rotate-45 h-[3.7px];
+}
+
+.burguer.open span:nth-child(3) {
+  @apply -rotate-45 h-[3.7px];
+}
+
+.burguer.open span:nth-child(4) {
+  @apply top-[14px] w-0;
+}

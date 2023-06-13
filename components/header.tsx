@@ -24,19 +24,16 @@ function Header(): React.JSX.Element {
             toggle(!istoggled)
           }}
         >
-          <svg
-            className="h-8 w-8 text-red-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+          <div
+            className={`${
+              istoggled ? 'open' : ''
+            } burguer h-8 w-8 relative rotate-0 transition ease-in-out duration-500`}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h8m-8 6h16"
-            />
-          </svg>
+            <span className="top-[6px]"></span>
+            <span className="top-[14px]"></span>
+            <span className="top-[14px]"></span>
+            <span className="top-[22px]"></span>
+          </div>
         </button>
         <Link href="/" className="animenu">
           Sarah Nakada
